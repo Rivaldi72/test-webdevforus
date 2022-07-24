@@ -14,7 +14,7 @@ class AddApiTokenFieldUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->string('api_token', 100);
         });
     }
 
@@ -26,7 +26,7 @@ class AddApiTokenFieldUsers extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropColumn('api_token');
         });
     }
 }
