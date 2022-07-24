@@ -1,12 +1,12 @@
+# rename .env.example to .env, change database setting for migration
+
+# run php artisan key:generate
+
 # please run php artisan migrate and composer update /composer install
 
-# file DFD, use case and ERD in document_teknis
-
-# to login, use this default accoun:
+# to login, use this default account:
 
 # email : admin@admin.com
-
-# username: admin
 
 # password: admin
 

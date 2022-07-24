@@ -1,0 +1,77 @@
++--------+-----------+----------------------+----------------+------------------------------------------------+-----------------+
+| Domain | Method    | URI                  | Name           | Action                                         | Middleware      |
++--------+-----------+----------------------+----------------+------------------------------------------------+-----------------+
+|        | GET|HEAD  | /                    | dashboard      | App\Http\Controllers\DashboardController@index | web             |
+|        |           |                      |                |                                                | auth            |
+|        | GET|HEAD  | api/user             |                | Closure                                        | api             |
+|        |           |                      |                |                                                | auth:api        |
+|        | GET|HEAD  | group                | group.index    | App\Http\Controllers\UserController@index      | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isHasAccess |
+|        | POST      | group                | group.store    | App\Http\Controllers\UserController@store      | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isHasAccess |
+|        | GET|HEAD  | group/create         | group.create   | App\Http\Controllers\UserController@create     | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isHasAccess |
+|        | DELETE    | group/{group}        | group.destroy  | App\Http\Controllers\UserController@destroy    | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isHasAccess |
+|        | PUT|PATCH | group/{group}        | group.update   | App\Http\Controllers\UserController@update     | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isHasAccess |
+|        | GET|HEAD  | group/{group}        | group.show     | App\Http\Controllers\UserController@show       | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isHasAccess |
+|        | GET|HEAD  | group/{group}/edit   | group.edit     | App\Http\Controllers\UserController@edit       | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isHasAccess |
+|        | POST      | login                |                | App\Http\Controllers\AuthController@login      | web             |
+|        | GET|HEAD  | login                | login          | App\Http\Controllers\AuthController@index      | web             |
+|        | GET|HEAD  | logout               | logout         | App\Http\Controllers\AuthController@logout     | web             |
+|        | POST      | member               | member.store   | App\Http\Controllers\UserController@store      | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isHasAccess |
+|        | GET|HEAD  | member               | member.index   | App\Http\Controllers\UserController@index      | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isHasAccess |
+|        | GET|HEAD  | member/create        | member.create  | App\Http\Controllers\UserController@create     | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isHasAccess |
+|        | GET|HEAD  | member/{member}      | member.show    | App\Http\Controllers\UserController@show       | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isHasAccess |
+|        | PUT|PATCH | member/{member}      | member.update  | App\Http\Controllers\UserController@update     | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isHasAccess |
+|        | DELETE    | member/{member}      | member.destroy | App\Http\Controllers\UserController@destroy    | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isHasAccess |
+|        | GET|HEAD  | member/{member}/edit | member.edit    | App\Http\Controllers\UserController@edit       | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isHasAccess |
+|        | GET|HEAD  | user                 | user.index     | App\Http\Controllers\UserController@index      | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isAdmin     |
+|        | POST      | user                 | user.store     | App\Http\Controllers\UserController@store      | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isAdmin     |
+|        | GET|HEAD  | user/create          | user.create    | App\Http\Controllers\UserController@create     | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isAdmin     |
+|        | POST      | user/{id}            | user.update    | App\Http\Controllers\UserController@update     | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isAdmin     |
+|        | DELETE    | user/{user}          | user.destroy   | App\Http\Controllers\UserController@destroy    | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isAdmin     |
+|        | GET|HEAD  | user/{user}          | user.show      | App\Http\Controllers\UserController@show       | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isAdmin     |
+|        | PUT|PATCH | user/{user}          | user.update    | App\Http\Controllers\UserController@update     | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isAdmin     |
+|        | GET|HEAD  | user/{user}/edit     | user.edit      | App\Http\Controllers\UserController@edit       | web             |
+|        |           |                      |                |                                                | auth            |
+|        |           |                      |                |                                                | can:isAdmin     |
++--------+-----------+----------------------+----------------+------------------------------------------------+-----------------+
